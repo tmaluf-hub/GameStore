@@ -26,6 +26,14 @@ class Categoria(CategoriaBase, table=True):
 class CategoriaCreate(CategoriaBase):
     pass
 
-#Schame para devolver datos al usuario
+#Schema para devolver datos al usuario
 class CategoriaPublic(CategoriaBase):
     id: int
+
+
+#Schema para actualizar una categoria (todos los campos opcionales)
+class CategoriaUpdate(SQLModel):
+    nombre_de_categoria: Annotated[
+        str | None,
+        Field(default=None, min_length=3, max_length=50)
+    ] = None

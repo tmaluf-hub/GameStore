@@ -33,6 +33,19 @@ class DesarrolladorCreate(DesarrolladorBase):
     pass
 
 
-#Schema para devlver datos de usuario
+#Schema para devolver datos al usuario
 class DesarrolladorPublic(DesarrolladorBase):
     id: int
+
+
+#Schema para actualizar un desarrollador (todos los campos opcionales)
+class DesarrolladorUpdate(SQLModel):
+    nombre: Annotated[
+        str | None,
+        Field(default=None, min_length=2, max_length=100)
+    ] = None
+
+    pais_de_origen: Annotated[
+        str | None,
+        Field(default=None, min_length=2, max_length=60)
+    ] = None
