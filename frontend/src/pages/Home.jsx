@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import { UserContext } from "../context/UserContext"
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
     <main className="flex-1 flex flex-col justify-center items-center">
       <h1 className="text-4xl text-blue-500 font-extrabold mb-4">Los mejores videojuegos al mejor precio</h1>
       <p className="text-blue-500 font-semibold mb-6">Explora nuestro catálogo!</p>
+      <Link to="/videojuegos" className="bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded cursor-pointer">Ver videojuegos</Link>
 
       <button
         onClick={toggleAdmin}

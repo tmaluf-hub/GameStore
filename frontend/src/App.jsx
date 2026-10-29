@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import Videojuegos from './pages/Videojuegos'
 import { Route, Routes } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import { UserProvider } from './context/UserContext'
@@ -17,6 +18,8 @@ function App() {
           <Routes>
 
             <Route path='/' element={<Home />} />
+
+            <Route path='/videojuegos' element={<Videojuegos />} />
 
           </Routes>
 
