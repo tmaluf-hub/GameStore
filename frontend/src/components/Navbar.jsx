@@ -14,6 +14,7 @@ export default function Navbar() {
 
       <ul className="flex gap-6 text-sm">
         <NavLink to={"/"} className={linkStyle}>Inicio</NavLink>
+        <NavLink to={"/videojuegos"} className={linkStyle}>Videojuegos</NavLink>
       </ul>
 
       <div className="bg-blue-600 font-bold px-4 py-1 rounded cursor-pointer">
