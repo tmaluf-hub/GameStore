@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { CartContext } from "../context/CartContext"
 import { UserContext } from "../context/UserContext"
 
@@ -22,9 +22,9 @@ export default function Navbar() {
         {user.admin && (<NavLink to={"/crear"} className={linkStyle}>Crear</NavLink>)}
       </ul>
 
-      <div className="bg-blue-600 font-bold px-4 py-1 rounded cursor-pointer">
+      <Link to={"/carrito"} className="bg-blue-600 font-bold px-4 py-1 rounded cursor-pointer">
         {totalItems > 0 ? (<p>Carrito: {totalItems}</p>) : (<p>Mi carrito</p>)}
-      </div>
+      </Link>
 
     </nav>
   )
