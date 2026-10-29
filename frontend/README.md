@@ -1,6 +1,6 @@
 # GameStore Front – EFI PP1 JavaScript
 
-Aplicación web en React de una tienda de videojuegos (temática elegida: **GameStore**). Es la segunda parte de la Evaluación Final Integradora y consume la API que hicimos en PP1 Python.
+Aplicación web en React de una tienda de videojuegos (temática elegida: **GameStore**). Es la segunda parte de la Evaluación Final Integradora y consume la API que hicimos en PP1 Python, que está en la raíz de este mismo repositorio.
 
 ## Temática y API utilizada
 
@@ -11,7 +11,7 @@ Aplicación web en React de una tienda de videojuegos (temática elegida: **Game
 - Agregar juegos al carrito, cambiar cantidades y ver el total.
 - Crear y eliminar videojuegos (solo con rol admin).
 
-La API es la **GameStore API**, hecha por nosotros con FastAPI + SQLModel + SQLite: https://github.com/tmaluf-hub/GameStore
+La API es la **GameStore API**, hecha por nosotros con FastAPI + SQLModel + SQLite. Está en la raíz de este repo y se documenta en el [README principal](../README.md).
 
 | Método | Endpoint | Dónde se usa |
 |---|---|---|
@@ -38,12 +38,12 @@ La API es la **GameStore API**, hecha por nosotros con FastAPI + SQLModel + SQLi
 
 ## Cómo correrlo localmente
 
-1. Levantar la **GameStore API** siguiendo su README. Tiene que quedar en `http://127.0.0.1:8000` y con al menos una categoría y un desarrollador cargados desde `/docs`.
-2. Clonar este repo y entrar a la carpeta:
+1. Levantar la **GameStore API** siguiendo el [README principal](../README.md). Tiene que quedar en `http://127.0.0.1:8000` y con al menos una categoría y un desarrollador cargados desde `/docs`.
+2. En otra terminal, entrar a la carpeta del frontend (si no clonaste el repo todavía, clonalo primero):
 
    ```bash
-   git clone https://github.com/tmaluf-hub/GameStore-front.git
-   cd GameStore-front
+   git clone https://github.com/tmaluf-hub/GameStore.git
+   cd GameStore/frontend
    ```
 
 3. Instalar dependencias:
@@ -52,7 +52,7 @@ La API es la **GameStore API**, hecha por nosotros con FastAPI + SQLModel + SQLi
    npm install
    ```
 
-4. Crear un archivo `.env` en la raíz con la URL de la API:
+4. Crear un archivo `.env` dentro de `frontend/` con la URL de la API:
 
    ```
    VITE_API_URL=http://127.0.0.1:8000
@@ -86,7 +86,7 @@ La API es la **GameStore API**, hecha por nosotros con FastAPI + SQLModel + SQLi
 ## Estructura del proyecto
 
 ```
-GameStore-front/
+frontend/
 ├── public/
 ├── src/
 │   ├── components/
@@ -114,6 +114,7 @@ GameStore-front/
 ## Deploy en Vercel
 
 - Link: _(a completar)_
+- Como el frontend está en una subcarpeta, en Vercel el **Root Directory** del proyecto es `frontend`.
 - La variable de entorno `VITE_API_URL` se configura en Vercel, en **Settings → Environment Variables**.
 - `vercel.json` redirige todas las rutas a `index.html`, para que React Router funcione al recargar una página como `/videojuegos/1`.
 
@@ -127,13 +128,14 @@ _(link a completar)_
 - `develop` → integra todas las features.
 - `feature/*` → una por tarea, mergeadas con `git merge --no-ff`.
 
-Ramas de este proyecto:
+`main` y `develop` son las mismas que usa la API, porque las dos partes están en el mismo repo. Las ramas del frontend llevan el prefijo `feature/front-*` para distinguirlas de las de la API:
 
-1. `feature/contextos`
-2. `feature/catalogo`
-3. `feature/detalle`
-4. `feature/crear-videojuego`
-5. `feature/eliminar-videojuego`
-6. `feature/carrito`
-7. `feature/deploy`
-8. `feature/readme`
+1. `feature/front-contextos`
+2. `feature/front-catalogo`
+3. `feature/front-detalle`
+4. `feature/front-crear-videojuego`
+5. `feature/front-eliminar-videojuego`
+6. `feature/front-carrito`
+7. `feature/front-deploy`
+8. `feature/front-readme`
+9. `feature/front-readme-integrantes`
