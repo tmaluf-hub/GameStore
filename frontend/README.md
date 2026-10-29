@@ -24,7 +24,7 @@ La API es la **GameStore API**, hecha por nosotros con FastAPI + SQLModel + SQLi
 ## Integrantes
 
 - Tomás Maluf
-- Fabri _(completar apellido)_
+- Fabri Gallardo
 
 ## Stack
 
