@@ -7,7 +7,7 @@ Está hecha con **FastAPI + SQLModel + SQLite + Alembic + fastapi-pagination**, 
 ## Integrantes
 
 - Tomás Maluf
-- Fabri
+- Fabri Gallardo
 
 ## Stack
 
