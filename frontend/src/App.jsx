@@ -5,6 +5,7 @@ import Videojuegos from './pages/Videojuegos'
 import VideojuegoDetalle from './pages/VideojuegoDetalle'
 import VideojuegoInfo from './components/VideojuegoInfo'
 import VideojuegoDesarrollador from './components/VideojuegoDesarrollador'
+import AgregarVideojuego from './pages/AgregarVideojuego'
 import { Route, Routes } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import { UserProvider } from './context/UserContext'
@@ -31,6 +32,8 @@ function App() {
               <Route path='desarrollador' element={<VideojuegoDesarrollador />} />
 
             </Route>
+
+            <Route path='/crear' element={<AgregarVideojuego />} />
 
           </Routes>
 
