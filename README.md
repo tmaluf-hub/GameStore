@@ -1,8 +1,13 @@
-# GameStore API – EFI PP1 Python
+# GameStore – EFI PP1 Python y JavaScript
 
-API REST de una tienda de videojuegos (temática elegida: **GameStore**). Es la primera parte de la Evaluación Final Integradora: después se consume desde el frontend en React (PP1 JavaScript).
+Repositorio de la Evaluación Final Integradora. Temática elegida: **GameStore**, una tienda de videojuegos. Tiene las dos partes del proyecto:
 
-Está hecha con **FastAPI + SQLModel + SQLite + Alembic + fastapi-pagination**, usando solo los temas vistos en el apunte de la materia.
+| Parte | Carpeta | Documentación |
+|---|---|---|
+| API REST (PP1 Python) | raíz del repo | este README |
+| Frontend React (PP1 JavaScript) | [`frontend/`](frontend/) | [`frontend/README.md`](frontend/README.md) |
+
+Lo que sigue documenta la **API**. Está hecha con **FastAPI + SQLModel + SQLite + Alembic + fastapi-pagination**, usando solo los temas vistos en el apunte de la materia.
 
 ## Integrantes
 
@@ -40,6 +45,7 @@ GameStore/
 │   └── versions/
 │       └── 87db96407444_migracion_inicial.py
 ├── alembic.ini
+├── frontend/                # app React (PP1 JavaScript), ver frontend/README.md
 ├── src/
 │   ├── database.py          # engine y get_session
 │   ├── main.py              # app FastAPI + CORS + routers + add_pagination
@@ -133,6 +139,7 @@ El filtro `?nombre=` usa `ilike` (insensible a mayúsculas y a parciales).
 
 ## Pensado para el frontend (PP1 JavaScript)
 
+- El frontend está en la carpeta [`frontend/`](frontend/) de este mismo repo.
 - CORS habilitado para `http://localhost:5173` (Vite) y `http://localhost:5500` (Live Server).
 - El `GET /videojuegos/` acepta filtros por `nombre`, `categoria_id` y `desarrolladores_id` para que React use `useEffect` con dependencias de un formulario de búsqueda.
 - Los endpoints `GET /{id}` ya devuelven el objeto con sus relaciones anidadas, listo para pintar una vista detalle sin pedir dos endpoints.
@@ -153,7 +160,7 @@ _(a completar antes de la entrega)_
 - `develop` → integra todas las features.
 - `feature/*` → una por tarea, mergeadas con `git merge --no-ff` para que el historial las muestre.
 
-Ramas de este proyecto:
+Ramas de la API:
 
 1. `feature/modelos-update-nested`
 2. `feature/router-categorias`
@@ -162,3 +169,7 @@ Ramas de este proyecto:
 5. `feature/main-app`
 6. `feature/alembic`
 7. `feature/readme`
+8. `feature/readme-integrantes`
+9. `feature/readme-monorepo` (une el frontend a este repo)
+
+Las ramas del frontend usan el prefijo `feature/front-*` y están listadas en [`frontend/README.md`](frontend/README.md).
