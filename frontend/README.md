@@ -113,7 +113,8 @@ frontend/
 
 ## Deploy en Vercel
 
-- Link: _(a completar)_
+- Link: https://game-store-sable-ten.vercel.app
+- La API corre de forma local, así que la app publicada trae datos solo en la compu donde esté corriendo la API.
 - Como el frontend está en una subcarpeta, en Vercel el **Root Directory** del proyecto es `frontend`.
 - La variable de entorno `VITE_API_URL` se configura en Vercel, en **Settings → Environment Variables**.
 - `vercel.json` redirige todas las rutas a `index.html`, para que React Router funcione al recargar una página como `/videojuegos/1`.
