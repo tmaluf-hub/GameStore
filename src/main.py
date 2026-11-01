@@ -19,13 +19,14 @@ app = FastAPI(
 )
 
 
-# CORS: habilita el frontend de React (Vite usa 5173, Live Server 5500).
-# El dominio de Vercel se agrega mas adelante cuando se publique el frontend.
+# CORS: habilita el frontend de React (Vite usa 5173, Live Server 5500)
+# y el frontend publicado en Vercel.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
         "http://localhost:5500",
+        "https://game-store-sable-ten.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
