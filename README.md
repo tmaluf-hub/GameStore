@@ -140,7 +140,7 @@ El filtro `?nombre=` usa `ilike` (insensible a mayúsculas y a parciales).
 ## Pensado para el frontend (PP1 JavaScript)
 
 - El frontend está en la carpeta [`frontend/`](frontend/) de este mismo repo.
-- CORS habilitado para `http://localhost:5173` (Vite) y `http://localhost:5500` (Live Server).
+- CORS habilitado para `http://localhost:5173` (Vite), `http://localhost:5500` (Live Server) y `https://game-store-sable-ten.vercel.app` (frontend publicado en Vercel).
 - El `GET /videojuegos/` acepta filtros por `nombre`, `categoria_id` y `desarrolladores_id` para que React use `useEffect` con dependencias de un formulario de búsqueda.
 - Los endpoints `GET /{id}` ya devuelven el objeto con sus relaciones anidadas, listo para pintar una vista detalle sin pedir dos endpoints.
 
