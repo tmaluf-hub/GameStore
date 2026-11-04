@@ -31,12 +31,15 @@ export default function Videojuegos() {
     // se vuelve a pedir la lista cada vez que cambia un filtro
     useEffect(() => {
         let url = `${API_URL}/videojuegos/?size=100`
-        if (filtros.nombre.trim()) url += `&nombre=${filtros.nombre.trim()}`
+        if (filtros.nombre.trim()) url += `&nombre=${encodeURIComponent(filtros.nombre.trim())}`
         if (filtros.categoria_id) url += `&categoria_id=${filtros.categoria_id}`
         if (filtros.desarrolladores_id) url += `&desarrolladores_id=${filtros.desarrolladores_id}`
 
         fetch(url)
-            .then(res => res.json())
+            .then((res) => {
+                if (!res.ok) throw new Error(`Error ${res.status}`)
+                return res.json()
+            })
             .then((data) => {
                 setVideojuegos(data.items)
                 setError(null)
