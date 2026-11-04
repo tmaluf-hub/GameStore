@@ -7,12 +7,17 @@ Repositorio de la Evaluación Final Integradora. Temática elegida: **GameStore*
 | API REST (PP1 Python) | raíz del repo | este README |
 | Frontend React (PP1 JavaScript) | [`frontend/`](frontend/) | [`frontend/README.md`](frontend/README.md) |
 
+- **App publicada en Vercel:** https://game-store-sable-ten.vercel.app
+- **Tablero Kanban en Trello:** https://trello.com/b/eupVrOgD/efi-gamestore
+
 Lo que sigue documenta la **API**. Está hecha con **FastAPI + SQLModel + SQLite + Alembic + fastapi-pagination**, usando solo los temas vistos en el apunte de la materia.
 
 ## Integrantes
 
-- Tomás Maluf
+- Valen Marchicio
+- Jacobo Zunino
 - Fabri Gallardo
+- Tomás Maluf
 
 ## Stack
 
@@ -146,17 +151,29 @@ El filtro `?nombre=` usa `ilike` (insensible a mayúsculas y a parciales).
 
 ## Capturas
 
-_(a completar antes de la entrega)_
+### `/docs` con todos los endpoints
 
-- [ ] `/docs` abierto con todos los endpoints
-- [ ] Ejemplo de `POST /videojuegos` exitoso
-- [ ] Ejemplo de `GET /videojuegos/{id}` con Nested
-- [ ] Error 404 documentado
-- [ ] Error 400 al intentar borrar categoría con videojuegos
+![Swagger con los 15 endpoints](docs/capturas/docs-endpoints.png)
+
+### `POST /videojuegos/` exitoso
+
+![POST de un videojuego que responde 201](docs/capturas/post-videojuego.png)
+
+### `GET /videojuegos/{id}` con Nested
+
+![GET de un videojuego con categoría y desarrollador anidados](docs/capturas/get-videojuego-nested.png)
+
+### Error 404
+
+![GET de un videojuego inexistente que responde 404](docs/capturas/error-404.png)
+
+### Error 400 al borrar una categoría con videojuegos
+
+![DELETE de una categoría con videojuegos que responde 400](docs/capturas/error-400.png)
 
 ## GitFlow usado
 
-- `main` → rama estable, tag `v1.0.0` al final.
+- `main` → rama estable, con los tags `v1.0.0` (API) y `v2.0.0` (entrega final con el frontend).
 - `develop` → integra todas las features.
 - `feature/*` → una por tarea, mergeadas con `git merge --no-ff` para que el historial las muestre.
 
@@ -171,5 +188,7 @@ Ramas de la API:
 7. `feature/readme`
 8. `feature/readme-integrantes`
 9. `feature/readme-monorepo` (une el frontend a este repo)
+10. `feature/cors-vercel`
+11. `feature/readme-entrega`
 
 Las ramas del frontend usan el prefijo `feature/front-*` y están listadas en [`frontend/README.md`](frontend/README.md).

@@ -23,8 +23,10 @@ La API es la **GameStore API**, hecha por nosotros con FastAPI + SQLModel + SQLi
 
 ## Integrantes
 
-- Tomás Maluf
+- Valen Marchicio
+- Jacobo Zunino
 - Fabri Gallardo
+- Tomás Maluf
 
 ## Stack
 
@@ -115,13 +117,14 @@ frontend/
 
 - Link: https://game-store-sable-ten.vercel.app
 - La API corre de forma local, así que la app publicada trae datos solo en la compu donde esté corriendo la API.
+- Al abrir la app publicada, Chrome puede pedir permiso para acceder a la red local o a otras apps del dispositivo. Hay que tocar **Permitir** para que se conecte con la API.
 - Como el frontend está en una subcarpeta, en Vercel el **Root Directory** del proyecto es `frontend`.
 - La variable de entorno `VITE_API_URL` se configura en Vercel, en **Settings → Environment Variables**.
 - `vercel.json` redirige todas las rutas a `index.html`, para que React Router funcione al recargar una página como `/videojuegos/1`.
 
 ## Tablero Kanban
 
-_(link a completar)_
+Las tareas se organizaron en Trello: https://trello.com/b/eupVrOgD/efi-gamestore
 
 ## GitFlow usado
 
@@ -140,3 +143,4 @@ _(link a completar)_
 7. `feature/front-deploy`
 8. `feature/front-readme`
 9. `feature/front-readme-integrantes`
+10. `feature/front-fix-busqueda`
